@@ -1,0 +1,30 @@
+body {
+      background-color: lightblue; text-align: center; font-family: Arial;
+color: orangered; 
+}
+
+
+nav {
+height:600px;
+width:200px;
+float:left;
+padding:5px;
+line-height:30px;
+}
+
+footer {
+text-align:center;
+margin-right:200px;
+}
+
+#memeimage {
+margin-right: 200px;
+}
+
+#header{
+text-align: center; 
+}
+
+p {
+font: 20px italic Arial; 
+}
