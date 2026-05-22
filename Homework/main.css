@@ -1,30 +1,35 @@
 body {
-      background-color: lightblue; text-align: center; font-family: Arial;
-color: orangered; 
+      background-color: #ffffff; text-align: center; font-family: Arial;
+color: #0e4355;
+text-align:center; 
 }
 
 
-nav {
+nav{
 height:600px;
 width:200px;
 float:left;
 padding:5px;
 line-height:30px;
+background-color:grey; 
 }
 
-footer {
+#footer {
 text-align:center;
 margin-right:200px;
 }
 
 #memeimage {
 margin-right: 200px;
+justify-content: center;
 }
 
 #header{
 text-align: center; 
 }
 
-p {
+p{
 font: 20px italic Arial; 
 }
+
+
