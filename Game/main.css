@@ -1,0 +1,42 @@
+/* Styles body */ 
+body{
+ background-image: url("jigsaw.jpg");
+ background-size: cover; 
+ background-position: center; 
+ font-family:arial; 
+ color: lime; 
+ text-align: center; 
+ margin-top:100px; 
+}
+
+
+/* styles the main body */
+
+#gameContainer{
+Background-color: rgba(0,0,0,0.8); 
+width:400px; 
+margin: auto; 
+padding: 30px; 
+border-radius:15px; 
+
+}
+
+/* styles the button */ 
+
+button{
+    background-color: darkred; 
+    color:white; 
+    padding: 10px; 
+    border: none; 
+    margin-top: 10px; 
+    cursor:pointer; 
+
+}
+
+/* styles inputes */ 
+
+input {
+    padding:10px; 
+    width:200px;
+
+}
