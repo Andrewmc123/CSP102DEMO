@@ -1,0 +1,153 @@
+<!-- Andrew McLean -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+ <title>My Information</title>
+ 
+</head>
+<body>
+  
+<!-- Main container --> 
+   <div id="Main-container"> 
+      <!-- Heading -->
+       <h1> User Acceess Portal </h1>
+      <form id = "userForm"> 
+    
+      <!-- Inputs for user information -->
+<input  type="text" id = "FirstName" placeholder="Enter First Name" required> </input> 
+<input  type="text" id = "LastName" placeholder="Enter Last Name" required> </input> 
+<input  type="text" id = "Zipcode" placeholder="Enter Zip Code" required> </input> 
+     
+      
+<!-- Button to validate info -->
+
+<button type="submit"> Unlock Information</button>
+
+</form>
+<!-- Warning message area -->
+ <p id="warning"> </p>
+
+ 
+ <!-- secret message --> 
+<p id="secretMessage"></p>
+
+   </div> 
+
+<script> 
+
+// Get the form element// 
+const userForm = document.getElementById("userForm"); 
+
+// Run when form is submitted 
+
+userForm.onsubmit = function (event)
+ {
+    // Stop page refresh //
+    event.preventDefault();
+    
+    //Get first name value // 
+    let firstName = document.getElementById("FirstName").value;
+    
+    // Get last name value
+     let lastName = document.getElementById("LastName").value; 
+     
+     // Get zip code value 
+     let zipCode = document.getElementById("Zipcode").value; 
+     
+     // Combine first and last name with a space
+      let fullName = firstName + " " + lastName;
+    // Clear previous messages
+     document.getElementById("warning").innerHTML = ""; 
+     document.getElementById("secretMessage").innerHTML = ""; 
+     
+     // Validate full name length
+    if (fullName.length > 20) { 
+      
+   // Display warning
+    document.getElementById("warning").innerHTML = "Warning: Full name must be 20 characters or less.";
+   
+    // Stop program
+     
+     return; } 
+     
+     // Validate zip code contains exactly 5 digits 
+     if (!/^\d{5}$/.test(zipCode)) { 
+   
+   // Display warning 
+   
+   document.getElementById("warning").innerHTML = "Warning: Zip code must contain exactly 5 digits."; 
+   
+   // Stop program 
+   
+   return; } 
+
+   // Show secret message if valid 
+   
+   document.getElementById("secretMessage").innerHTML = "Access Granted! The Answer's you seek, are already decided within you. Believe and do the work! "; 
+   }; 
+   
+   </script>
+
+   <style> 
+body{
+   background-image: url("amsercuityphoto.png");
+   background-size:cover; 
+   background-position: center; 
+   background-repeat: no-repeat;
+   display:flex; 
+   justify-content:center; 
+   align-items:center; 
+   min-height: 100vh;
+}
+
+#Main-container{
+   width:450px;
+   padding:30px; 
+   background:rgba(0,0,0,0.55);
+   backdrop-filter: blur(10px); 
+   border-radius: 15px; 
+   border: 1px solid rgba(255,255,255,0.2);
+   text-align:center; 
+   color:white;
+   
+}
+
+button{
+   width:95px; 
+   padding: 12px; 
+   border: none; 
+   border-radius: 5px; 
+   color:black; 
+   font-weight: bold; 
+   cursor: pointer; 
+
+}
+
+#secretMessage{
+   color: #00ff88; 
+   font-size: 14px; 
+   font-weight: bold; 
+   margin-top: 15px; 
+}
+
+input{
+   width:90%;
+   padding:12px; 
+   margin: 10px 0; 
+   border-radius:5px; 
+   font-size:16px; 
+}
+
+#warning{
+   color:red; 
+   font-weight: bold; 
+   margin-top:10px; 
+
+}
+
+   </style>
+
+</body>
+</html>
