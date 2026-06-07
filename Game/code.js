@@ -83,4 +83,3 @@ document.getElementById("gameResults").innerHTML =
 "<h3>" + result + "</h3> "; 
 
 } 
-

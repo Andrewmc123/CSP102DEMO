@@ -1,6 +1,6 @@
 /* Styles body */ 
 body{
- background-image: url("jigsaw.jpg");
+ background-image: url("./jigsaw.jpg");
  background-size: cover; 
  background-position: center; 
  font-family:arial; 
