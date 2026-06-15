@@ -4,46 +4,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
- <title>My Information</title>
- 
+    <title>My Information</title>
 </head>
+
 <body>
-  
+
 <!-- Main container --> 
-   <div id="Main-container"> 
+<div id="Main-container"> 
+
       <!-- Heading -->
-       <h1> User Acceess Portal </h1>
-      <form id = "userForm"> 
+      <h1> User Acceess Portal </h1>
+
+      <form id="userForm"> 
     
       <!-- Inputs for user information -->
-<input  type="text" id = "FirstName" placeholder="Enter First Name" required> </input> 
-<input  type="text" id = "LastName" placeholder="Enter Last Name" required> </input> 
-<input  type="text" id = "Zipcode" placeholder="Enter Zip Code" required> </input> 
+      <input type="text" id="FirstName" placeholder="Enter First Name" required>  
+      <input type="text" id="LastName" placeholder="Enter Last Name" required>
+      <input type="text" id="Zipcode" placeholder="Enter Zip Code" required>  
      
-      
-<!-- Button to validate info -->
+      <!-- Button to validate info -->
+      <button type="submit"> Unlock Information</button>
 
-<button type="submit"> Unlock Information</button>
+      </form>
 
-</form>
-<!-- Warning message area -->
- <p id="warning"> </p>
+      <!-- Warning message area -->
+      <p id="warning"> </p>
 
- 
- <!-- secret message --> 
-<p id="secretMessage"></p>
+      <!-- secret message --> 
+      <p id="secretMessage"></p>
 
-   </div> 
+      <!-- Palindrome code -->
+
+      <h2>Palindrome Checker</h2>
+
+      <form id="palindromeForm">
+
+         <!-- Input for when user enters word phrase -->
+         <input type="text" id="palindromeInput" placeholder="Enter a Word or Phase" required> 
+
+         <!-- Palindrome check button -->
+         <button type="submit"> Generate Palindrome </button>
+
+      </form>
+
+      <!-- Results message -->
+      <p id="palindromeMessage"></p> 
+
+      <!--Continue option-->
+      <button id="doneButton">Done</button> 
+
+</div> 
 
 <script> 
+
+// Palondrome Form // 
+
+const palindromeForm = document.getElementById("palindromeForm");
+
+// runs form on submit // 
+palindromeForm.onsubmit = function(event) {
+   
+   // stop refresh // 
+   event.preventDefault(); 
+
+   // get user input 
+   let userWord = document.getElementById("palindromeInput").value;
+
+   // Remove spaces from lowercase //
+   let cleanedWord = userWord.replace(/\s/g, "").toLowerCase(); 
+
+   // reverse String using LOOP (required)
+   let reversed = ""; 
+      
+   for (let i = cleanedWord.length - 1; i >= 0; i--) {
+      reversed += cleanedWord[i]; 
+   }
+
+   // This checks if the word is Palidrome or not // 
+   if (cleanedWord === reversed) {
+      document.getElementById("palindromeMessage").innerHTML =
+      '"' + userWord + '" is a Palindrome!';
+   } 
+   else {
+      document.getElementById("palindromeMessage").innerHTML =
+      '"' + userWord + '" is NOT a Palindrome!';
+   }
+
+   // done button // 
+   document.getElementById("doneButton").onclick = function()
+   {
+      document.getElementById("palindromeMessage").innerHTML =
+      "Thank you for using My Palindrome Checker!"; 
+
+      document.getElementById("palindromeInput").disabled = true; 
+   };
+};
+
+
 
 // Get the form element// 
 const userForm = document.getElementById("userForm"); 
 
 // Run when form is submitted 
-
 userForm.onsubmit = function (event)
- {
+{
     // Stop page refresh //
     event.preventDefault();
     
@@ -51,46 +115,49 @@ userForm.onsubmit = function (event)
     let firstName = document.getElementById("FirstName").value;
     
     // Get last name value
-     let lastName = document.getElementById("LastName").value; 
+    let lastName = document.getElementById("LastName").value; 
      
-     // Get zip code value 
-     let zipCode = document.getElementById("Zipcode").value; 
+    // Get zip code value 
+    let zipCode = document.getElementById("Zipcode").value; 
      
-     // Combine first and last name with a space
-      let fullName = firstName + " " + lastName;
+    // Combine first and last name with a space
+    let fullName = firstName + " " + lastName;
+
     // Clear previous messages
-     document.getElementById("warning").innerHTML = ""; 
-     document.getElementById("secretMessage").innerHTML = ""; 
+    document.getElementById("warning").innerHTML = ""; 
+    document.getElementById("secretMessage").innerHTML = ""; 
      
-     // Validate full name length
+    // Validate full name length
     if (fullName.length > 20) { 
       
-   // Display warning
-    document.getElementById("warning").innerHTML = "Warning: Full name must be 20 characters or less.";
+        // Display warning
+        document.getElementById("warning").innerHTML =
+        "Warning: Full name must be 20 characters or less.";
    
-    // Stop program
+        // Stop program
+        return; 
+    } 
      
-     return; } 
-     
-     // Validate zip code contains exactly 5 digits 
-     if (!/^\d{5}$/.test(zipCode)) { 
+    // Validate zip code contains exactly 5 digits 
+    if (!/^\d{5}$/.test(zipCode)) { 
    
-   // Display warning 
+        // Display warning 
+        document.getElementById("warning").innerHTML =
+        "Warning: Zip code must contain exactly 5 digits."; 
    
-   document.getElementById("warning").innerHTML = "Warning: Zip code must contain exactly 5 digits."; 
-   
-   // Stop program 
-   
-   return; } 
+        // Stop program 
+        return; 
+    } 
 
-   // Show secret message if valid 
-   
-   document.getElementById("secretMessage").innerHTML = "Access Granted! The Answer's you seek, are already decided within you. Believe and do the work! "; 
-   }; 
-   
-   </script>
+    // Show secret message if valid 
+    document.getElementById("secretMessage").innerHTML =
+    "Access Granted! The Answer's you seek, are already decided within you. Believe and do the work!"; 
+}; 
 
-   <style> 
+</script>
+
+<style> 
+
 body{
    background-image: url("amsercuityphoto.png");
    background-size:cover; 
@@ -122,7 +189,6 @@ button{
    color:black; 
    font-weight: bold; 
    cursor: pointer; 
-
 }
 
 #secretMessage{
@@ -144,10 +210,26 @@ input{
    color:red; 
    font-weight: bold; 
    margin-top:10px; 
-
 }
 
-   </style>
+h2{
+   color:#00ff88;
+   margin-top:25px; 
+}
+
+/* Palindrome result styling */
+#palindromeMessage{
+   color:white;
+   font-weight:bold; 
+   margin-top:15px; 
+}
+
+/* Done button */
+#doneButton{
+   margin-top:10px; 
+}
+
+</style>
 
 </body>
 </html>
