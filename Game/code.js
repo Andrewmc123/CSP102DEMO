@@ -30,7 +30,16 @@ function welcomePlayer(name){
 
 }
 
+// Get Audio element // 
 
+let gamesound = document.getElementById("gamesound");
+
+
+// Restart Audio // 
+gamesound.currentTime = 0; 
+
+// play sound effect // 
+gamesound.play(); 
 
 
 

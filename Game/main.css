@@ -24,19 +24,23 @@ border-radius:15px;
 /* styles the button */ 
 
 button{
-    background-color: darkred; 
-    color:white; 
-    padding: 10px; 
-    border: none; 
-    margin-top: 10px; 
-    cursor:pointer; 
+background-color: darkred; 
+color:white; 
+padding: 10px; 
+border: none; 
+margin-top: 10px; 
+cursor:pointer; 
 
 }
 
 /* styles inputes */ 
 
 input {
-    padding:10px; 
-    width:200px;
+padding:10px; 
+width:200px;
 
+}
+
+audio {
+margin-top:10px;
 }
