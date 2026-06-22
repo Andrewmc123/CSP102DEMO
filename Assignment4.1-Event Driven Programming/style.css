@@ -1,0 +1,155 @@
+body{
+    text-align:center; 
+    font-family: Arial, Helvetica, sans-serif;
+    background-image:url("Black_Holes.gif"); 
+    background-size:cover; 
+    background-repeat:no-repeat; 
+    background-position: center; 
+    height:100vh; 
+    overflow:hidden; 
+
+}
+
+
+h1{
+    color:white; 
+    text-shadow: 2px 2px 5px black; 
+}
+
+p{
+    color:white; 
+    font-size:20px; 
+    text-shadow:1px 1px 3px black; 
+}
+
+button{
+    padding:10px; 
+    width:120px;
+    font-size:18px; 
+    border:none; 
+    border-radius: 10px; 
+    cursor:pointer; 
+    margin:10px;
+}
+
+#start-button{
+    background-color: green; 
+    color:white; 
+   
+}
+
+#stop-button{
+    background-color: red; 
+    color:white; 
+}
+
+#memeImage{
+    position:absolute; 
+    width: 200px; 
+    left:0px; 
+    top:250px; 
+
+}
+#game-container {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.75);
+    padding: 25px 35px;
+    border-radius: 25px;
+    backdrop-filter: blur(12px);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+    min-width: 450px;
+}
+
+#game-container h2 {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 5px;
+    text-shadow: 0 0 20px rgba(0, 204, 255, 0.5);
+}
+
+#game-container p {
+    color: #aaddff;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+/* Form styling */
+#guessForm {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#guessInput {
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: 2px solid #00ccff;
+    font-size: 1rem;
+    width: 150px;
+    background: rgba(255,255,255,0.9);
+    transition: all 0.3s;
+}
+
+#guessInput:focus {
+    outline: none;
+    border-color: #ff6bff;
+    box-shadow: 0 0 20px rgba(255, 107, 255, 0.3);
+}
+
+#guessForm button {
+    background: linear-gradient(135deg, #00ccff, #0066ff);
+    color: white;
+    width: auto;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#guessForm button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 204, 255, 0.4);
+}
+
+#guessForm button:last-child {
+    background: linear-gradient(135deg, #ff6b6b, #ff3b3b);
+}
+
+#guessForm button:last-child:hover {
+    box-shadow: 0 0 25px rgba(255, 107, 107, 0.4);
+}
+
+/* Game message styling (using innerHTML) */
+#gameMessage {
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 15px;
+    min-height: 2.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+    padding: 8px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.3);
+}
+
+/* Statistics message styling (using innerHTML) */
+#statsMessage {
+    color: #88ff88;
+    font-size: 0.95rem;
+    margin-top: 8px;
+    min-height: 1.8rem;
+    line-height: 1.6;
+    text-shadow: 0 0 8px rgba(0,0,0,0.9);
+    padding: 8px 15px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.25);
+}

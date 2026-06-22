@@ -1,0 +1,43 @@
+<!--The Great Andrew Mclean-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Button Project</title>
+  <!-- link to css file -->
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<!-- Html body open tag -->
+<body>
+   <!-- buttons --> 
+    <button id="start-button" onclick="startMeme()">Start</button>
+    <button id="stop-button" onclick="stopMeme()" disabled>Stop</button>
+    <br><br> 
+<!-- Image -->
+    <img id="memeImage" src="memeImage.png" alt="memeImage">  
+
+<!-- Number Game code-->
+
+<!-- Form submit for all user input-->
+<div id="game-container"> 
+    <h2>Number Guessing Game</h2>
+    <p> Guess a number between 1 and 100</p> 
+
+    <form id ="guessForm" onsubmit="handleGuess(event)">
+        <input type="number" id="guessInput" placeholder="Enter your guess" min="1" max="100" required> 
+        <button type="submit">Submit Guess</button>
+        <button type="button" onclick="resetGame()">New Game</button>
+    </form>
+
+    <!-- GAme Results Displaying -->
+
+    <div id="gameMessage"></div>
+    <div id="statsMessage"> </div>
+</div> 
+
+
+    <!-- link to script file -->
+    <script src="buttons.js"></script>
+</body>
+</html>
