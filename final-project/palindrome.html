@@ -1,0 +1,39 @@
+<!-- Andrew McLean - Palindrome Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Palindrome Checker</title>
+
+   <!-- link to css file -->
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+   <!-- main card -->
+   <div class="card">
+
+      <h1>Palindrome Checker</h1>
+      <p>Type a word or phrase to see if it reads the same backwards.</p>
+
+      <!-- form with submit for user input -->
+      <form id="palindromeForm">
+         <input type="text" id="palindromeInput" placeholder="Enter a word or phrase" required>
+         <br>
+         <button type="submit">Check Palindrome</button>
+      </form>
+
+      <!-- result message (innerHTML) -->
+      <p id="palindromeMessage" class="message"></p>
+
+      <!-- back to landing page -->
+      <a class="back-link" href="index.html">Back to Home</a>
+
+   </div>
+
+   <!-- link to script file -->
+   <script src="palindrome.js"></script>
+</body>
+</html>

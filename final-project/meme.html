@@ -1,0 +1,38 @@
+<!-- Andrew McLean - Meme Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Meme Project</title>
+
+   <!-- link to css file -->
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+   <!-- main card -->
+   <div class="card">
+
+      <h1>Moving Meme</h1>
+      <p>Press Start to make the meme move, and Stop to freeze it.</p>
+
+      <!-- start and stop buttons -->
+      <button id="start-button" onclick="startMeme()">Start</button>
+      <button id="stop-button" onclick="stopMeme()" disabled>Stop</button>
+
+      <!-- the area where the meme moves -->
+      <div class="meme-stage">
+         <img id="memeImage" src="memeImage.png" alt="meme image">
+      </div>
+
+      <!-- back to landing page -->
+      <a class="back-link" href="index.html">Back to Home</a>
+
+   </div>
+
+   <!-- link to script file -->
+   <script src="meme.js"></script>
+</body>
+</html>

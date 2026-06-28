@@ -1,0 +1,44 @@
+<!-- Andrew McLean - User Input / Validation Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>User Input Validation</title>
+
+   <!-- link to css file -->
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+   <!-- main card -->
+   <div class="card">
+
+      <h1>User Access Portal</h1>
+      <p>Enter your information to unlock the secret message.</p>
+
+      <!-- form with submit for user input -->
+      <form id="userForm">
+         <input type="text" id="firstName" placeholder="Enter First Name" required>
+         <input type="text" id="lastName" placeholder="Enter Last Name" required>
+         <input type="text" id="zipCode" placeholder="Enter Zip Code" required>
+         <br>
+         <button type="submit">Unlock Information</button>
+      </form>
+
+      <!-- warning message (innerHTML) -->
+      <p id="warning" class="warning"></p>
+
+      <!-- secret message (innerHTML) -->
+      <p id="secretMessage" class="secret"></p>
+
+      <!-- back to landing page -->
+      <a class="back-link" href="index.html">Back to Home</a>
+
+   </div>
+
+   <!-- link to script file -->
+   <script src="validation.js"></script>
+</body>
+</html>
